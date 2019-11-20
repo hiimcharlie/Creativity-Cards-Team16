@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     float horizontalMove;
     bool jump = false;
     public float runSpeed = 100f;
+
+    public Animator animator;
    
     // Start is called before the first frame update
    
@@ -20,7 +22,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             jump = true;
 
-        
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         
     }
